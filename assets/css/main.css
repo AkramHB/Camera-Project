@@ -5,7 +5,7 @@
   padding: 0px;
   margin: 0px;
   font-size: 10px;
-
+  overflow-x: hidden;
 }
 
 .img-fill{
@@ -196,9 +196,22 @@
   .slick-loading .slick-slide{visibility:hidden}
   .slick-vertical .slick-slide{display:block;height:auto;border:1px solid transparent}
 
-  .nav {
-    opacity: 0.1;
+  .section {
+    margin-top: 10rem;
   }
+
+  .section--grey {
+    background-color: #f5f5f5;
+  }
+
+  .section__p--size {
+    font-size: 1.5rem;
+  }
+
+  .nav {
+    transition: all 1s;
+  }
+
   .nav__logo {
     height: 100px;
   }
@@ -206,6 +219,17 @@
   .nav__a {
       font-size: 2rem;
       font-weight: 700;
+      color: #fff;
+      transition: all 1.5s; 
   }
+
+  .nav__a:hover {
+    color: #f06b40 !important;
+}
+
+  .active {
+    border-bottom: #f06b40 solid 5px; 
+}
+
 
   

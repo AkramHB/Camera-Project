@@ -14,7 +14,7 @@
 <body>
 
     
-        <nav class="nav navbar navbar-expand-lg navbar-light bg-light fixed-top" id="myNav">
+        <nav class="nav navbar navbar-expand-lg fixed-top" id="myNav">
             <div class = "container">
                 <img class="navbar-brand nav__logo" src="https://banner2.kisspng.com/20180216/hjw/kisspng-camera-logo-photography-clip-art-photography-symbol-cliparts-5a869f6a655221.965669281518772074415.jpg">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,14 +22,17 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarText">
                   <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                      <a class="nav-link nav__a" href="#">Home <span class="sr-only">(current)</span></a>
+                    <li class="nav-item" id = "myAbout">
+                      <a class="nav-link nav__a" href="#about">عنا</a>
                     </li>
-                    <li class="nav-item">
-                      <a class="nav-link nav__a" href="#">Features</a>
+                    <li class="nav-item" id = "myFeatures">
+                      <a class="nav-link nav__a" href="#features" >منتجاتنا</a>
                     </li>
-                    <li class="nav-item">
-                      <a class="nav-link nav__a" href="#">Pricing</a>
+                    <li class="nav-item" id = "myProducts">
+                        <a class="nav-link nav__a" href="#products" >لماذا نحن</a>
+                      </li>
+                    <li class="nav-item active" id = "myHome">
+                      <a class="nav-link nav__a" href="#" >الرئيسية</a>
                     </li>
                   </ul>
                 </div>
@@ -91,7 +94,73 @@
         </div>
         <!-- // Item -->
       </div>
-</body>
+
+      
+
+          <section class = "section" id = "features">
+              <div class="container">
+                <h1 class="text-center display-3">Keeping an Eye on Dangerous Driving</h1>
+                <p class="text-center section__p--size">Hazen.ai is building advanced traffic cameras with the capability to detect dangerous driving behavior through video analysis.</p>
+                <div class="row mt-5">
+                  <div class="col-lg-6">
+                    <img class="img-fluid" src="http://hazen.ai/wp-content/uploads/2018/04/who-img.jpg">
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="row">
+                        <section class = "media mt-4" id="drwinthrop">
+                            <img class="d-flex align-self-center mr-4 img-fluid rounded" style = "width: 50px;" src="http://hazen.ai/wp-content/uploads/2018/04/noun_724876-e1524073803778.png" alt="">
+                            <div class="media-body">
+                                <h2>Safer Roads</h2>
+                                <h5>Comprehensive Monitoring</h5>
+                                <p>Our goal is to detect all types of moving violations. Our software can detect sudden lane changes, tailgating, driving on shoulder, queue jumping, failure to yield, illegal U-turns, and more...</p>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="row">
+                        <section class = "media mt-5" id="drwinthrop">
+                            <img class="d-flex align-self-center mr-4 img-fluid rounded" style = "width: 50px;" src="http://hazen.ai/wp-content/uploads/2018/04/noun_1235930-e1524073966629.png" alt="">
+                            <div class="media-body">
+                                <h2>Make AI Work for You</h2>
+                                <h5>Advanced Technology</h5>
+                                <p>Based on the latest Deep Learning algorithms, our core video analysis engine reliably detects vehicles in video, and extracts their trajectories for understanding road behavior.</p>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="row">
+                        <section class = "media mt-5" id="drwinthrop">
+                            <img class="d-flex align-self-center mr-4 img-fluid rounded" style = "width: 50px;" src="http://hazen.ai/wp-content/uploads/2018/04/noun_1681604-e1524075627175.png" alt="">
+                            <div class="media-body">
+                                <h2>Sensible Solutions</h2>
+                                <h5>Ease of Deployment</h5>
+                                <p>We believe that the time is ripe for a new generation of traffic cameras, that utilize camera analytics, rather than expensive RADAR or LiDAR deployments. Competitively priced and feature rich.</p>
+                            </div>
+                        </section>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="section section--grey" id = "products">
+              <div class="container section">
+                <h1 class="text-center display-3">Our Products</h1>
+                <p class="text-center section__p--size">Our products are based on smart algorithms which have the ability to analyze images to 'understand' their content.</p>
+                <div class="row mt-5">
+                  <div class="col-3">
+                     
+                  </div>
+                  <div class="col-3">
+                      
+                  </div>
+                </div>
+              </div>
+            </section> 
+      
+      
+      
+      
+      <section id="about"></section>
+    </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src='https://kenwheeler.github.io/slick/slick/slick.js'></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
@@ -99,16 +168,44 @@
 <script  src="assets/js/main.js"></script>
 
 <script>
-$(window).scroll(function() {    
 
-    var scroll = $(window).scrollTop();
+  $( "#myHome" ).click(function() {
+    $("#myHome").addClass("active");
+    $("#myFeatures").removeClass("active");
+    $("#myProducts").removeClass("active");
+    $("#myAbout").removeClass("active");
+  });
+  $( "#myFeatures" ).click(function() {
+    $("#myHome").removeClass("active");
+    $("#myFeatures").addClass("active");
+    $("#myProducts").removeClass("active");
+    $("#myAbout").removeClass("active");
+  });
+  $( "#myProducts" ).click(function() {
+    $("#myHome").removeClass("active");
+    $("#myFeatures").removeClass("active");
+    $("#myProducts").addClass("active");
+    $("#myAbout").removeClass("active");
+  });
+  $( "#myAbout" ).click(function() {
+    $("#myHome").removeClass("active");
+    $("#myFeatures").removeClass("active");
+    $("#myProducts").removeClass("active");
+    $("#myAbout").addClass("active");
+  });
 
-    if (scroll >= 100) {
-        $("#myNav").removeClass("nav");
-    }
-    else {
-        $("#myNav").addClass("nav");
-    }
+  $(window).scroll(function() {    
+
+      var scroll = $(window).scrollTop();
+
+      if (scroll >= 50) {
+        $("#myNav").addClass("navbar-light");
+          $("#myNav").addClass("bg-light");
+      }
+      else {
+          $("#myNav").removeClass("navbar-light");
+          $("#myNav").removeClass("bg-light");
+      }
 });
 </script>
 
