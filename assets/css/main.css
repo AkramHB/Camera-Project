@@ -231,5 +231,21 @@
     border-bottom: #f06b40 solid 5px; 
 }
 
+.thecard {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+}
+
+.thecard__side {
+  background-color: orangered;
+  height: 50rem;
+  transition: all .8s;
+}
+
+.thecard:hover .thecard__side{
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
 
   
