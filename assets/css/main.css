@@ -204,6 +204,12 @@
     background-color: #f5f5f5;
   }
 
+  .section--black {
+    background-color: #202125;
+    height: 100px;
+    color: #fff;
+  }
+
   .section__p--size {
     font-size: 1.5rem;
   }
@@ -234,17 +240,43 @@
 .thecard {
   perspective: 150rem;
   -moz-perspective: 150rem;
+  position: relative;
+  height: 50rem;
 }
 
 .thecard__side {
-  background-color: orangered;
+  font-size: 2rem;
   height: 50rem;
-  transition: all .8s;
+  transition: all .8s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  backface-visibility: hidden;
 }
 
-.thecard:hover .thecard__side{
+.thecard__side--front{
+  background-color: #fff;
+}
+
+.thecard__side--front--font{
+  font-size: 1.5rem;
+}
+
+.thecard__side--back {
+  background-color: green;
   -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
+}
+
+.thecard:hover .thecard__side--front{
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+.thecard:hover .thecard__side--back{
+  -webkit-transform: rotateY(0);
+  transform: rotateY(0);
 }
 
 
