@@ -263,6 +263,10 @@
   font-size: 1.5rem;
 }
 
+.thecard__side--front--font--black{
+  color: #000;
+}
+
 .thecard__side--back {
   background-color: green;
   -webkit-transform: rotateY(180deg);
@@ -277,6 +281,80 @@
 .thecard:hover .thecard__side--back{
   -webkit-transform: rotateY(0);
   transform: rotateY(0);
+}
+
+.menu {
+    width: 35px;
+    height: 5px;
+    background-color: #fff;
+    margin: 6px 0;
+}
+
+.btn:link, .btn:visited {
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 100px;
+  transition: all .2s;
+  position: relative;
+  font-size: 3rem;
+  margin-top: 10rem;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,.2);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+
+.btn-white {
+  background-color: white;
+  color: #777;
+}
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s;
+}
+
+.btn-white::after {
+  background-color: #fff;
+  color: #777;
+}
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.btn-animated {
+  animation: moveInBottom .5s ease-in .75s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes moveInBottom {
+  0% {
+      transform: translateY(30px);
+      opacity: 0;
+  }
+  
+  100% {
+      transform: translateY(0);
+      opacity: 1;
+  }
 }
 
 
